@@ -23,7 +23,7 @@ data = pd.read_csv("bitcoin.csv")
 data.info()
 
 close = data.filter(items=['Close'])
-close.plot()
+
 close = close.values
 
 scaler = MinMaxScaler()
