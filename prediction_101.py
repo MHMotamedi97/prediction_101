@@ -50,10 +50,10 @@ for i in range(len(test)-look_back-1):
 x_test = np.array(dataX)
 y_test = np.array(dataY)
 
-x_train = (np.reshape(x_train, (x_train.shape[0], 1, x_train.shape[1])))
-x_test = (np.reshape(x_test, (x_test.shape[0], 1, x_test.shape[1])))
-y_train = (y_train.reshape((y_train.size, 1)))
-y_test = (y_test.reshape((y_test.size, 1)))
+x_train = tf.convert_to_tensor(np.reshape(x_train, (x_train.shape[0], 1, x_train.shape[1])))
+x_test = tf.convert_to_tensor(np.reshape(x_test, (x_test.shape[0], 1, x_test.shape[1])))
+y_train = tf.convert_to_tensor(y_train.reshape((y_train.size, 1)))
+y_test = tf.convert_to_tensor(y_test.reshape((y_test.size, 1)))
 
 model = Sequential()
 model.add(LSTM(25, input_shape=(1, look_back), return_sequences=True, activation = 'tanh', stateful=False))
