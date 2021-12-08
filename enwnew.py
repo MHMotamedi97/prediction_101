@@ -10,6 +10,7 @@ from tensorflow.keras.layers import Dropout
 from tensorflow.keras.models import load_model
 from tensorflow.keras.optimizers import Adam
 import tensorflow.keras.backend as K
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
 x_train = tf.convert_to_tensor(np.reshape(x_train, (x_train.shape[0], 1, x_train.shape[1])))
 x_test = tf.convert_to_tensor(np.reshape(x_test, (x_test.shape[0], 1, x_test.shape[1])))
